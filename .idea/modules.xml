@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://D:/code/blog/.idea/blog.iml" filepath="D:/code/blog/.idea/blog.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mvc_frame.iml" filepath="$PROJECT_DIR$/.idea/mvc_frame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../adwifi/wifi_process_coupon/.idea/wifi_process_coupon.iml" filepath="$PROJECT_DIR$/../adwifi/wifi_process_coupon/.idea/wifi_process_coupon.iml" />
     </modules>
   </component>
 </project>
