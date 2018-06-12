@@ -1,2 +1,3 @@
 libaray/templates_c/*
 !libaray/templates_c/.gitkeep
+config.php

@@ -1,0 +1,22 @@
+<?php
+/**
+ * 圖片路徑
+ */
+define('IMAGE_URL', 'http://adv.system.local/image/');
+/**
+ * 資料庫帳號
+ */
+define('DB_USER', 'root');
+/**
+ * 資料庫密碼
+ */
+define('DB_PASSWD', '');
+/**
+ * 資料庫名稱
+ */
+define('DB_NAME', 'ads.adwifi');
+/**
+ * 資料庫網址
+ */
+define('DB_HOST', 'localhost');
+?>
