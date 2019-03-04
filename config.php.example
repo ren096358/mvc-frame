@@ -1,9 +1,5 @@
 <?php
 /**
- * 圖片路徑
- */
-define('IMAGE_URL', 'http://adv.system.local/image/');
-/**
  * 資料庫帳號
  */
 define('DB_USER', 'root');

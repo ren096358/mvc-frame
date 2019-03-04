@@ -1,3 +1,4 @@
-libaray/templates_c/*
-!libaray/templates_c/.gitkeep
 config.php
+/vendor/
+/smarty/templates_c/*
+!/smarty/templates_c/.gitkeep
