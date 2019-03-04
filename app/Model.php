@@ -3,14 +3,21 @@ namespace App;
 
 require_once "./config.php";
 
-abstract class Model
+class Model
 {
 
-    protected $conn = null;
+    protected static $conn = null;
 
     public function __construct()
     {
-        $this->init();
+        if (empty(self::$conn)) {
+            $this->init();
+        }
+    }
+
+    public function __destruct()
+    {
+        self::$conn = null;
     }
 
     public function init()
@@ -21,10 +28,26 @@ abstract class Model
             $db_user = DB_USER;
             $db_password = DB_PASSWD;
             $dsn = "mysql:host=$db_host;dbname=$db_name;charset=utf8";
-            $this->conn = new \PDO($dsn, $db_user, $db_password, []);
+            self::$conn = new PDO($dsn, $db_user, $db_password);
+            self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
             echo $e->getMessage();
         }
+    }
+
+    public function beginTransaction()
+    {
+        return self::$conn->beginTransaction();
+    }
+
+    public function commit()
+    {
+        return self::$conn->commit();
+    }
+
+    public function rollback()
+    {
+        return self::$conn->rollback();
     }
 
 }
