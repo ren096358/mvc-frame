@@ -1,6 +1,8 @@
 <?php
 namespace App;
 
+use \PDO;
+
 require_once "./config.php";
 
 class Model
@@ -28,7 +30,7 @@ class Model
             $db_user = DB_USER;
             $db_password = DB_PASSWD;
             $dsn = "mysql:host=$db_host;dbname=$db_name;charset=utf8";
-            self::$conn = new PDO($dsn, $db_user, $db_password);
+            self::$conn = new PDO($dsn, $db_user, $db_password, []);
             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
             echo $e->getMessage();
