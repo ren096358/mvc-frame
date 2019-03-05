@@ -12,7 +12,7 @@ class Model
 
     public function __construct()
     {
-        if (empty(self::$conn)) {
+        if (self::$conn === null) {
             $this->init();
         }
     }
@@ -32,24 +32,24 @@ class Model
             $dsn = "mysql:host=$db_host;dbname=$db_name;charset=utf8";
             self::$conn = new PDO($dsn, $db_user, $db_password, []);
             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo $e->getMessage();
         }
     }
 
-    public function beginTransaction()
+    public static function beginTransaction()
     {
         return self::$conn->beginTransaction();
     }
 
-    public function commit()
+    public static function commit()
     {
         return self::$conn->commit();
     }
 
-    public function rollback()
+    public static function rollback()
     {
         return self::$conn->rollback();
     }
-
+    
 }

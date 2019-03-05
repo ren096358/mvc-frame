@@ -11,8 +11,8 @@ class IndexController extends Controller
         try {
             $action = $this->getAction();
             $action = empty($action) ? 'ShowIndexPageAction' : $action;
-            $classname = "App\\Actions\\$action";
-            $actionListener = new $classname();
+            $className = "App\\Actions\\$action";
+            $actionListener = new $className();
             return $actionListener->actionPerformed($this->event);
         } catch (\Exception $e) {
             return $e->getMessage();
